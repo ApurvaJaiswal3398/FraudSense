@@ -1,0 +1,78 @@
+<style>
+.modal-header img{
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer button{
+    width: 40%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;    
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#popupfraud button{
+    background-color: rgb(219,5,41);
+}
+</style>
+<!-- Modal Body -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <img src="./../static/images/shield.png" alt="safe">
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="mx-auto w-100 text-center">
+                    <div class="h2" style="font-weight: 800;">Safe Transaction  </div>
+                    <div class="h4" style="font-weight: 600;">The Transaction is Safe</div>
+                    <div class="h6" style="font-weight: 500; margin-top: 15px;">Click OK To Proceed!!</div>
+                </div>
+            </div>  
+            <div class="modal-footer w-100">
+                <button type="button" class="btn btn-secondary mx-auto px-3" data-bs-dismiss="modal" onclick="showPredRes()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalId2" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <img src="./../static/images/warning.png" alt="fraud">
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="mx-auto w-100 text-center">
+                    <div class="h2" style="font-weight: 800;">Fraud Transaction  </div>
+                    <div class="h4" style="font-weight: 600;">The Transaction is Fraudulent</div>
+                    <div class="h6" style="font-weight: 500; margin-top: 15px;">Click OK To Proceed!!</div>
+                </div>
+            </div>  
+            <div class="modal-footer w-100" id="popupfraud">
+                <button type="button" class="btn btn-secondary mx-auto px-3" data-bs-dismiss="modal" onclick="showPredRes()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Body End -->
+<script>
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options);
+    
+    // Function to display the Prediction Result
+    function showPredRes() {
+        document.getElementById("pred_display").style.display = "block";
+    }
+</script>

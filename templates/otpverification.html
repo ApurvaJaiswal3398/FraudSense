@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+    body{
+        background-color: beige;
+    }
+    
+    .phtext{
+        color: #333;
+    }
+
+    .login-card {
+        padding: 50px 100px;
+    }
+</style>
+{% endblock %}
+
+{% block spin_login %}<span class="spinner-grow spinner-grow-sm"></span>{% endblock %}
+
+{% block body %}
+<br><br>
+<div class="container-md">
+    <div class="row justify-content-md-center" style="margin: 50px;">
+        <div class="col-6">
+            <div class="bg-dark text-light rounded login-card" >
+                <form method="POST" name="otpverify">
+                    <div class="h3 mb-3 font-weight-normal text-center">OTP Verification</div><hr>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control form-elem" name="otp" id="otp" placeholder="OTP" required>
+                        <label class="phtext" for="otp">OTP</label>
+                    </div>
+                    <button class="btn btn-danger col-sm-6 rounded-pill">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
